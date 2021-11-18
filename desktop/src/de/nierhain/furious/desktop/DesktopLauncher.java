@@ -8,11 +8,12 @@ import de.nierhain.furious.desktop.settings.DesktopSettings;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-
+		FuriousChicken furiousChicken = new FuriousChicken();
+		furiousChicken.setSplashWorker(new DesktopSplashWorker());
 		config.width = DesktopSettings.WINDOW_WIDTH;
 		config.height = DesktopSettings.WINDOW_HEIGHT;
 		config.title = DesktopSettings.WINDOW_TITLE;
 
-		new LwjglApplication(new FuriousChicken(), config);
+		new LwjglApplication(furiousChicken, config);
 	}
 }
